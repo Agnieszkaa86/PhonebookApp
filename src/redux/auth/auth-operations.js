@@ -20,7 +20,7 @@ const clearAuthHeader = () => {
   "email": "across@mail.com",
   "password": "examplepwd12345"
 }
- * После успешной регистрации добавляем токен в HTTP-заголовок
+ 
  */
 export const register = createAsyncThunk(
   'auth/register',
