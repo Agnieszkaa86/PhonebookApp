@@ -24,10 +24,10 @@ export const ContactList = () => {
       {error && <p>{error}</p>}
       <List>
         {contacts.length > 0 &&
-          contacts.map(({ id, name, phone }) => {
+          contacts.map(({ id, name, number }) => {
             return (
               <Item key={id}>
-                {name} : {phone}
+                {name} : {number}
                 <Button onClick={() => dispatch(deleteContact(id))}>
                   Delete
                 </Button>
