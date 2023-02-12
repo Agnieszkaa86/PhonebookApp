@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { logIn } from 'redux/auth/auth-operations';
+import { login } from 'redux/auth/auth-operations';
 import { Container, Form, Label, Input, Button, Title } from './Auth.styled';
 
 export const Login = () => {
@@ -30,7 +30,7 @@ export const Login = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     dispatch(
-      logIn({
+      login({
         email,
         password,
       })
