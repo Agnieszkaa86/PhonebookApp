@@ -14,14 +14,16 @@ export const LoginForm = () => {
   
   const handleSubmit = (evt) => {
      evt.preventDefault();
-   const form = evt.currentTarget;
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
+    const form = evt.target;
+     const email = form.email.value;
+    const password = form.password.value;
+     if ((email && password) === '') {
+      alert('Email and password fields cannot be empty');
+      return
+    } else {
+      dispatch(logIn({ email, password }));
+      form.reset();
+    }
   };
 
   return (
