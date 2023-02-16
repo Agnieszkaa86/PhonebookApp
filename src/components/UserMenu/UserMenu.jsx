@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { IconContext } from 'react-icons';
 import { FaUserCircle } from 'react-icons/fa';
-
 import { logOut } from '../../redux/auth/operations';
 import { useAuth } from '../../hooks/useAuth';
 import { Menu, Button, Text } from './UserMenu.styled';
@@ -23,4 +22,3 @@ export const UserMenu = () => {
     </Menu>
   );
 };
-
