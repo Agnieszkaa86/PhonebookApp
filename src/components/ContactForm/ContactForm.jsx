@@ -7,20 +7,19 @@ export const ContactForm = () => {
   const contacts = useSelector(selectAllContacts);
   const dispatch = useDispatch();
 
-  const handleSubmit = evt => {
+  const handleSubmit = async evt => {
     evt.preventDefault();
     const form = evt.target;
     const name = form.name.value;
     const number = form.number.value;
 
-    const existInContacts = contacts.some(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
-    );
-    if (existInContacts) {
-      return alert(`There is ${name} in your contacts`);
+    if (contacts.find(cont => cont.name === name)) {
+      alert(`${name} is already in contacts`)
+    } else {
+      dispatch(addContact({ name, number }));
+      alert(`${name} has been added to contacts list`)
+      form.reset();
     }
-    dispatch(addContact({ name, number }));
-    form.reset();
   };
 
   return (
