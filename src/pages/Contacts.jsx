@@ -15,7 +15,6 @@ export const Contacts = () => {
   }, [dispatch]);
   return (
     <div style={{ display: 'block', margin: '20px 80px' }}>
-
       <ContactForm />
       <Filter />
       <div>{isLoading && 'Request in progress...'}</div>
