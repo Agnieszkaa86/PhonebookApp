@@ -14,10 +14,10 @@ export const ContactForm = () => {
     const number = form.number.value;
 
     if (contacts.find(cont => cont.name === name)) {
-      alert(`${name} is already in contacts`)
+      alert(`${name} is already in contacts`);
     } else {
       dispatch(addContact({ name, number }));
-      alert(`${name} has been added to contacts list`)
+      alert(`${name} has been added to contacts list`);
       form.reset();
     }
   };
