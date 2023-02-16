@@ -17,7 +17,7 @@ import  filterReducer  from './filterSlice';
 import { authReducer } from './auth/slice';
 
 const middleware = [
-   ...getDefaultMiddleware({
+  ...getDefaultMiddleware({
     serializableCheck: {
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
@@ -34,8 +34,8 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    filter: filterReducer,
     contacts: contactsReducer,
-    filter: filterReducer, 
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
