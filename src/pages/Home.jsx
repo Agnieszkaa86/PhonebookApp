@@ -1,6 +1,5 @@
 import { Image, List, ListItem, ListIcon } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
-
 import { Container, Wrapper, Span, Description } from './Home.styled';
 
 export default function Home() {
@@ -45,4 +44,4 @@ export default function Home() {
       </Container>
     </>
   );
-};
+}
