@@ -11,15 +11,15 @@ import {
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  
-  const handleSubmit = (evt) => {
-     evt.preventDefault();
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
     const form = evt.target;
-     const email = form.email.value;
+    const email = form.email.value;
     const password = form.password.value;
-     if ((email && password) === '') {
+    if ((email && password) === '') {
       alert('Email and password fields cannot be empty');
-      return
+      return;
     } else {
       dispatch(logIn({ email, password }));
       form.reset();
@@ -29,10 +29,7 @@ export const LoginForm = () => {
   return (
     <Container>
       <Title>Log in your account</Title>
-      <Form
-        onSubmit={handleSubmit}
-        autoComplete="off"
-      >
+      <Form onSubmit={handleSubmit} autoComplete="off">
         <Label>
           Email
           <Input type="email" name="email" />
