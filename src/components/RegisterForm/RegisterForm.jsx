@@ -31,9 +31,7 @@ export const RegisterForm = () => {
   return (
     <Container>
       <Title>Register new account</Title>
-      <Form
-        onSubmit={handleSubmit}
-        autoComplete="off">
+      <Form onSubmit={handleSubmit} autoComplete="off">
         <Label>
           Username
           <Input
