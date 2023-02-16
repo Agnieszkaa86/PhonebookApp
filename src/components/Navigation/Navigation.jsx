@@ -1,13 +1,14 @@
 import { useAuth } from '../../hooks/useAuth';
-import { NavBar, BarLink } from './Navigation.styled';
+import { Nav, Link } from './Navigation.styled';
 
 export const Navigation = () => {
    const { isLoggedIn } = useAuth();
   return (
-    <NavBar style={{ display: 'flex', gap: '10px' }}>
-      <BarLink to="/">Home</BarLink>
+    <Nav style={{ display: 'flex', gap: '10px' }}>
+      <Link to="/">Home</Link>
 
-      {isLoggedIn && <BarLink to="/contacts">My contacts</BarLink>}
-    </NavBar>
+      {isLoggedIn && <Link to="/contacts">My contacts</Link>
+      }
+    </Nav>
   );
 };
