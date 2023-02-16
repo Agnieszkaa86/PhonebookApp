@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const List = styled.ul`
   margin-bottom: 10px;
+  
 `;
 export const Item = styled.li`
   display: flex;
@@ -10,6 +11,7 @@ export const Item = styled.li`
   margin-bottom: 8px;
   padding: 3px 10px;
   width: 290px;
+  margin-left: 208px;
   height: 50px;
   background: 	rgb(248,248,248);
   // background: linear-gradient(
