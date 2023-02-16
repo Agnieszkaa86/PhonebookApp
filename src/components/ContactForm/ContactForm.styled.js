@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 
 export const Form = styled.form`
+  max-width: 1280px;
+  width: 500px;
   border: 1px solid;
   padding: 15px;
-  margin: 0 auto;
+  margin-left: 250px;
 `;
 export const Input = styled.input`
   display: block;
