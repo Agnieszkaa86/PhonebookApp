@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const NavBar = styled.nav`
+export const Nav= styled.nav`
   display: flex;
   gap: 10px;
 `;
 
-export const BarLink = styled(NavLink)`
+export const Link = styled(NavLink)`
   display: flex;
   gap: 10px;
   color: black;
