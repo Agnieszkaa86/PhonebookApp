@@ -9,19 +9,20 @@ import {
   Title,
 } from './RegisterForm.styled';
 
-// const initialValues = { name: '', email: '', password: '' };
-
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    const form = evt.currentTarget;
+    const form = evt.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
     dispatch(
       register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        name,
+        email,
+        password,
       })
     );
     form.reset();
@@ -38,9 +39,9 @@ export const RegisterForm = () => {
           <Input
             type="text"
             name="name"
-            // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            // required
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
           />
         </Label>
         <Label>
@@ -52,9 +53,9 @@ export const RegisterForm = () => {
           <Input
             type="password"
             name="password"
-            // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            // title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-            // required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            required
           />
         </Label>
         <Button type="submit">Register</Button>
