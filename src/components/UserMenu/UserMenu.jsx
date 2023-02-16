@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
-import { IconContext } from 'react-icons';
-import { FaUserCircle } from 'react-icons/fa';
+// import { IconContext } from 'react-icons';
+// import { FaUserCircle } from 'react-icons/fa';
 
-import { logOut } from '../../redux/auth/auth-operations';
+import { logOut } from '../../redux/auth/operations';
 import { useAuth } from '../../hooks/useAuth';
 import { Menu, Button, Text } from './UserMenu.styled';
 
@@ -12,9 +12,9 @@ export const UserMenu = () => {
 
   return (
     <Menu>
-      <IconContext.Provider value={{ color: '#4abda7' }}>
+      {/* <IconContext.Provider value={{ color: '#4abda7' }}>
         <FaUserCircle />
-      </IconContext.Provider>
+      </IconContext.Provider> */}
 
       <Text>Welcome, {user.name}</Text>
       <Button type="button" onClick={() => dispatch(logOut())}>
@@ -23,3 +23,4 @@ export const UserMenu = () => {
     </Menu>
   );
 };
+

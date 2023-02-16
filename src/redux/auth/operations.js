@@ -93,16 +93,15 @@ const clearAuthHeader = () => {
  * body: { name, email, password }
  */
 export const register = createAsyncThunk(
-  'auth/register',
-  async ({ email, name, password}, thunkAPI) => {
+  'auth/register', async (credentials) => {
     try {
-      const res = await axios.post('/users/signup', {email,name, password});
+      const res = await axios.post('/users/signup', credentials);
       const data = res.data;
       // After successful register, add the token to the HTTP header
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      alert('Please try again')
     }
   }
 );
@@ -111,18 +110,14 @@ export const register = createAsyncThunk(
  * POST @ /users/login
  * body: { email, password }
  */
-export const logIn = createAsyncThunk(
-  'auth/login',
-  async (credentials, thunkAPI) => {
+export const logIn = createAsyncThunk('auth/login', async credentials => {
     try {
       const { data } = await axios.post('/users/login', credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      // alert("Wrong password or email");
-   
-      return thunkAPI.rejectWithValue(error.message);
+      alert("Wrong password or email");
     }
   }
 );
@@ -131,7 +126,7 @@ export const logIn = createAsyncThunk(
  * POST @ /users/logout
  * headers: Authorization: Bearer token
  */
-export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+export const logOut = createAsyncThunk('auth/logout', async () => {
   try {
     await axios.post('/users/logout');
     // After a successful logout, remove the token from the HTTP header
@@ -139,7 +134,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     // alert("Log out successful");
 
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    alert("Opps! Please, try again!")
   }
 });
 

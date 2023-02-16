@@ -3,7 +3,7 @@ import { CheckCircleIcon } from '@chakra-ui/icons';
 
 import { Container, Wrapper, Span, Description } from './Home.styled';
 
-export const Home = () => {
+export default function Home() {
   return (
     <>
       <Container>

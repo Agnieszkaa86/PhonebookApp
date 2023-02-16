@@ -1,18 +1,18 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  selectIsLoading,
-  selectVisibleContacts,
-  selectError,
-} from 'redux/selectors';
-import { deleteContact, fetchContacts } from 'redux/operations';
+  selectLoading,
+  selectAllContacts,
+  // selectError,
+} from '../../redux/contacts/selectors';
+import { deleteContact, fetchContacts } from '../../redux/contacts/operations';
 import { List, Item, Button } from './ContactList.styled';
 
 export const ContactList = () => {
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  const isLoading = useSelector(selectLoading);
+  // const error = useSelector(selectError);
   const dispatch = useDispatch();
-  const contacts = useSelector(selectVisibleContacts);
+  const contacts = useSelector(selectAllContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -21,7 +21,7 @@ export const ContactList = () => {
   return (
     <>
       {isLoading && <p>Data is loading</p>}
-      {error && <p>{error}</p>}
+      {/* {error && <p>{error}</p>} */}
       <List>
         {contacts.length > 0 &&
           contacts.map(({ id, name, number }) => {

@@ -1,10 +1,10 @@
-import { AuthLink, AuthNavigation } from './AuthNav.styled';
+import { AuthLink } from './AuthNav.styled';
 
 export const AuthNav = () => {
   return (
-    <AuthNavigation>
+    <div>
       <AuthLink to="/register">Register</AuthLink>
       <AuthLink to="/login">Log In </AuthLink>
-    </AuthNavigation>
+    </div>
   );
 };
