@@ -1,8 +1,8 @@
 {
-  "name": "phonebook-app",
+  "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Agnieszkaa86.github.io/phonebook-app/",
+  "homepage": "https://Agnieszkaa86.github.io/goit-react-hw-08-phonebook/",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.4.9",
