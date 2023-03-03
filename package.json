@@ -1,8 +1,8 @@
 {
-  "name": "PhonebookApp",
+  "name": "phonebook-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Agnieszkaa86.github.io/PhonebookApp/",
+  "homepage": "https://Agnieszkaa86.github.io/phonebook-app/",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.4.9",
